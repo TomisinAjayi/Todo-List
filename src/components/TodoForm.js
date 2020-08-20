@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import uuid from "uuid";
+import { v4 as uuid} from "uuid";
 
 function TodoForm({ addTodo }) {
     const [todo, setTodo] = useState({
@@ -15,20 +15,20 @@ function TodoForm({ addTodo }) {
     function handleSubmit(e) {
         e.preventDefault();
         if (todo.task.trim()) {
-            addTodo({..todo, id: uuid.v4() });
+            addTodo({...todo, id: uuid() });
             setTodo({ ...todo, task: ""});
         }
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
+            <input 
                 name="task"
                 type="text"
                 value={todo.task}
                 onChange= {handleTaskInputChange}
             />
-            <button type="submit" />
+            <button type="submit"> submit </button>
         </form>
     );
 }
