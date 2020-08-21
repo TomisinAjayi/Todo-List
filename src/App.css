@@ -29,7 +29,6 @@ ul {
   list-style-type: none;
   background-color: white;
   padding-inline-start: 5px;
-  margin-inline-start: -68px;
 }
 
 form input[type="text"] {
